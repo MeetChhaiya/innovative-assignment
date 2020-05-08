@@ -8,6 +8,7 @@ Created on Sat Dec  2 02:21:51 2017
 # import all dependencies
 # -*- coding: utf-8 -*-
 import pandas as pd
+import numpy
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.svm import LinearSVC
@@ -46,7 +47,7 @@ predResult2 = classifierModel2.predict(x_testFeat)
 
 # Calc accuracy,converting to int - solves - cant handle mix of unknown and binary
 y_test = y_test.astype('int')
-actual_Y = y_test.as_matrix()
+actual_Y = y_test.to_numpy()
 
 print("~~~~~~~~~~SVM RESULTS~~~~~~~~~~")
 #Accuracy score using SVM
